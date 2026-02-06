@@ -1212,3 +1212,16 @@
     transform: translateX(-16px) scale(1.14) !important;
   }
 }
+@media (max-width: 560px){
+  .footer a.design-by .db-logo{
+    overflow: hidden !important;       /* ascunde ce “tăiem” */
+  }
+
+  .footer a.design-by .db-logo img{
+    clip-path: inset(8px 0 8px 0) !important; /* taie 8px sus+jos (schimbă 6-12px) */
+    background: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
+    border: 0 !important;
+  }
+}
