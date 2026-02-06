@@ -1194,3 +1194,19 @@
 .services-box-actions button.btn{
   color: rgba(0,0,0,.78) !important;
 }
+/* MOBILE: urcă butoanele flotante ca să nu intre peste footer */
+@media (max-width: 560px){
+  .float-stack{
+    right: 14px;
+    bottom: 120px;      /* ↑ ridică mai sus (ajustează 100–160px) */
+    z-index: 2000;
+  }
+
+  /* să nu mai acopere butoanele textul din footer */
+  .footer{
+    padding-bottom: 150px;  /* spațiu pentru butoane (ajustează 120–180px) */
+  }
+}
+@media (max-width: 560px){
+  .social-rail{ display: none; }
+}
