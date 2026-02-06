@@ -1217,3 +1217,6 @@
     transform: translateX(-16px) scale(1.14) !important;
   }
 }
+.social-rail{
+  display: none !important;
+}
