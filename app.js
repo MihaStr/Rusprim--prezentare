@@ -267,4 +267,22 @@
     if (e.key === "Escape") closeLegal();
   });
 })();
+(function(){
+  const floatStack = document.querySelector('.float-stack');
+  const footer = document.querySelector('footer.footer');
+  if(!floatStack || !footer) return;
+
+  const update = () => {
+    const vh = window.innerHeight;
+    const fr = footer.getBoundingClientRect();
+    const overlap = vh - fr.top; // cât intră footer-ul peste ecran
+    const base = 16;
+    const extra = Math.max(0, overlap + 20); // 20px buffer
+    floatStack.style.bottom = (base + extra) + 'px';
+  };
+
+  window.addEventListener('scroll', update, { passive:true });
+  window.addEventListener('resize', update);
+  update();
+})();
 
