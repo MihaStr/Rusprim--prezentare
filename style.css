@@ -975,16 +975,11 @@
   .reveal.in{ opacity: 1; transform: translateY(0); }
   
   /* SOCIAL RAIL */
-  .social-rail{
-    position: fixed;
-    left: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 80;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
+  /* SOCIAL RAIL – OFF */
+.social-rail{
+  display: none !important;
+}
+
   .social-btn{
     width: 44px; height: 44px;
     border-radius: 14px;
@@ -1216,7 +1211,4 @@
   .footer a.design-by .db-logo img{
     transform: translateX(-16px) scale(1.14) !important;
   }
-}
-.social-rail{
-  display: none !important;
 }
