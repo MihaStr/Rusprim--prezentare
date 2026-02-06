@@ -1218,7 +1218,7 @@
   }
 
   .footer a.design-by .db-logo img{
-    clip-path: inset(8px 0 8px 0) !important; /* taie 8px sus+jos (schimbă 6-12px) */
+    clip-path: inset(10px 0 10px 0) !important; /* taie 8px sus+jos (schimbă 6-12px) */
     background: transparent !important;
     box-shadow: none !important;
     outline: none !important;
