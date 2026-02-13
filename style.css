@@ -23,12 +23,6 @@
     --on-dark: rgba(255,255,255,.92);
     --on-dark-muted: rgba(255,255,255,.74);
     --dark-line: rgba(255,255,255,.10);
-  
-    --anth: #12161c;
-    --anth2:#0f1318;
-    --anthLine: rgba(255,255,255,.10);
-  
-    --contact-grad: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
   }
   
   *{ box-sizing:border-box; }
@@ -138,23 +132,13 @@
   }
   .site-header.on-hero .menu a:hover{ background: rgba(0,0,0,.28); }
   
-  /* FIX #1: Contact din header ca restul (fără gradient) */
   .nav-contact{
     background: transparent !important;
     box-shadow: none !important;
     color: rgba(0,0,0,.70) !important;
   }
-  .site-header.on-hero .menu a.nav-contact{
-    color: rgba(255,255,255,.92) !important;
-  }
-  .nav-contact:hover{
-    background: rgba(0,0,0,.06) !important;
-  }
-  .site-header.on-hero .nav-contact:hover{
-    background: rgba(0,0,0,.28) !important;
-  }
+  .site-header.on-hero .menu a.nav-contact{ color: rgba(255,255,255,.92) !important; }
   
-  /* Nav call */
   .nav-call{
     display:inline-flex;
     align-items:center;
@@ -578,11 +562,7 @@
   .sb-ico{ width: 18px; height: 18px; display:inline-grid; place-items:center; }
   .sb-ico svg{ width: 18px; height: 18px; color: rgba(0,0,0,.80); }
   .services-box-actions{ display:flex; gap: 10px; flex-wrap: wrap; justify-content:flex-end; }
-  
-  /* FIX: text negru pe butonul "Sună acum" (ca Cere ofertă) */
-  .services-box-actions a.btn{
-    color: rgba(0,0,0,.86) !important;
-  }
+  .services-box-actions a.btn{ color: rgba(0,0,0,.86) !important; }
   
   /* PORTOFOLIO */
   .section-portfolio{
@@ -782,8 +762,6 @@
     font-weight: 900;
     font-size: 12px;
   }
-  .faq-ico{ width: 18px; height: 18px; display:inline-grid; place-items:center; }
-  .faq-ico svg{ width: 18px; height: 18px; }
   .faq-title{ margin-top: 12px; font-weight: 1000; font-size: 20px; letter-spacing: -0.02em; }
   .faq-sub{ margin-top: 6px; color: rgba(0,0,0,.60); line-height: 1.7; font-size: 14px; }
   .faq{ margin-top: 12px; display:grid; gap: 10px; }
@@ -831,7 +809,6 @@
   }
   .footer a:hover{ color: rgba(47,127,123,1); }
   .footer-brand{ font-weight: 1000; letter-spacing: .02em; margin-bottom: 10px; }
-  
   .footer-muted{
     color: rgba(0,0,0,.58);
     line-height: 1.6;
@@ -841,12 +818,7 @@
     flex-direction: column;
     gap: 6px;
   }
-  .footer-muted a{
-    display: inline;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-  
+  .footer-muted a{ display: inline; padding: 0 !important; margin: 0 !important; }
   .footer-title{ font-weight: 1000; margin-bottom: 10px; font-size: 13px; }
   
   .footer-icons{
@@ -885,8 +857,35 @@
     flex-wrap: wrap;
   }
   
- 
-  /* LIGHTBOX – FULL imagine (fără crop, fără sus) */
+  /* Design by (pro, simplu) */
+  .footer-bottom--split{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+  }
+  
+  .footer a.design-by{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    opacity:.9;
+  }
+  
+  .footer a.design-by:hover{
+    opacity:1;
+  }
+  
+  .footer a.design-by img.ms-footer-logo{
+    height: 120px;
+    width:auto;
+    display:block;
+  }
+  
+  
+  
+  /* LIGHTBOX */
   .lightbox{
     position: fixed;
     inset: 0;
@@ -894,7 +893,6 @@
     display: none;
   }
   .lightbox.open{ display: block; }
-  
   .lb-backdrop{
     position:absolute;
     inset:0;
@@ -913,7 +911,6 @@
     border: 1px solid rgba(255,255,255,.12);
     box-shadow: 0 30px 90px rgba(0,0,0,.45);
     overflow: hidden;
-  
     display: flex;
     align-items: center;
     justify-content: center;
@@ -932,10 +929,8 @@
     max-height: 100%;
     width: auto;
     height: auto;
-  
     object-fit: contain !important;
     object-position: center !important;
-  
     border-radius: 16px;
     background: rgba(0,0,0,.18);
   }
@@ -974,28 +969,6 @@
   .reveal{ opacity: 0; transform: translateY(14px); transition: opacity .70s ease, transform .70s ease; }
   .reveal.in{ opacity: 1; transform: translateY(0); }
   
-  /* SOCIAL RAIL */
-  /* SOCIAL RAIL – OFF */
-.social-rail{
-  display: none !important;
-}
-
-  .social-btn{
-    width: 44px; height: 44px;
-    border-radius: 14px;
-    display: grid;
-    place-items: center;
-    background: rgba(255,255,255,.65);
-    border: 1px solid rgba(0,0,0,.10);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 14px 40px rgba(0,0,0,.12);
-    transition: transform .18s ease, background .18s ease, border-color .18s ease;
-  }
-  .hero .social-btn{ background: rgba(255,255,255,.18); border-color: rgba(255,255,255,.20); }
-  .social-btn svg{ width: 20px; height: 20px; color: rgba(0,0,0,.70); }
-  .hero .social-btn svg{ color: rgba(255,255,255,.92); }
-  .social-btn:hover{ transform: translateY(-2px); background: rgba(168,214,215,.55); border-color: rgba(47,127,123,.22); }
-  
   /* FLOAT BUTTONS */
   .float-stack{
     position: fixed;
@@ -1025,65 +998,93 @@
     transition: transform .18s ease, background .18s ease, border-color .18s ease;
   }
   .float-btn:hover{ transform: translateY(-2px); }
-  .float-ico{ width: 18px; height: 18px; display:inline-grid; place-items:center; }
-  .float-ico svg{ width: 18px; height: 18px; }
-  
   .float-btn--top{ display:none; margin-bottom: 56px; }
   .float-btn--top.show{ display:inline-flex; }
   
-  /* LEGAL MODAL */
-  .legal-modal{ position: fixed; inset: 0; z-index: 1100; display: none; }
-  .legal-modal.open{ display:block; }
-  .legal-backdrop{ position:absolute; inset:0; background: rgba(0,0,0,.35); backdrop-filter: blur(6px); }
-  .legal-panel{
-    position:absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: min(980px, calc(100% - 22px));
-    height: min(88vh, 900px);
-    border-radius: 22px;
-    border: 1px solid rgba(0,0,0,.10);
-    background: linear-gradient(180deg, rgba(248,249,250,1), rgba(255,255,255,1));
-    box-shadow: 0 30px 90px rgba(0,0,0,.25);
-    overflow: hidden;
-  }
-  .legal-close{
-    position:absolute;
-    top: 12px;
-    right: 12px;
-    width: 44px;
-    height: 44px;
-    border-radius: 999px;
-    border: 1px solid rgba(0,0,0,.10);
-    background: rgba(255,255,255,.80);
-    cursor:pointer;
-    font-size: 26px;
-    line-height: 1;
-    color: rgba(0,0,0,.70);
-  }
-  .legal-content{
-    padding: 22px 18px 18px;
-    height: 100%;
-    overflow: auto;
-  }
-  .legal-kicker{
-    font-weight: 900;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    font-size: 11px;
-    color: rgba(0,0,0,.55);
-  }
-  .legal-content h2{ margin: 10px 0 6px; letter-spacing: -0.03em; }
-  .legal-muted{ margin: 0 0 14px; color: rgba(0,0,0,.58); line-height: 1.8; }
-  .legal-box{
-    border-radius: 18px;
-    border: 1px solid rgba(0,0,0,.08);
-    background: rgba(255,255,255,.85);
-    padding: 16px;
-  }
-  .legal-box h3{ margin: 12px 0 6px; letter-spacing: -0.02em; }
-  .legal-box p{ margin: 0 0 10px; color: rgba(0,0,0,.62); line-height: 1.9; font-weight: 460; }
+  /* =========================
+   LEGAL MODAL
+   ========================= */
+.legal-modal{
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: none;
+}
+
+.legal-modal.open{ display: block; }
+
+.legal-backdrop{
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(2px);
+}
+
+.legal-panel{
+  position: relative;
+  width: min(920px, calc(100% - 28px));
+  max-height: min(84vh, 760px);
+  margin: 8vh auto 0;
+  border-radius: 22px;
+  overflow: hidden;
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: 0 26px 90px rgba(0,0,0,.22);
+}
+
+.legal-close{
+  position:absolute;
+  top: 10px;
+  right: 10px;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,.10);
+  background: rgba(255,255,255,.85);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.legal-content{
+  padding: 22px 22px 24px;
+  overflow: auto;
+  max-height: min(84vh, 760px);
+}
+
+.legal-kicker{
+  font-weight: 900;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: rgba(0,0,0,.55);
+  margin-bottom: 10px;
+}
+
+.legal-box h2{
+  margin: 6px 0 10px;
+  font-size: 28px;
+  letter-spacing: -0.02em;
+}
+
+.legal-box h3{
+  margin: 16px 0 6px;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+}
+
+.legal-box p{
+  margin: 0 0 10px;
+  color: rgba(0,0,0,.70);
+  line-height: 1.85;
+  font-weight: 460;
+}
+
+.legal-muted{
+  color: rgba(0,0,0,.55);
+  font-size: 14px;
+}
+
   
   /* RESPONSIVE */
   @media (max-width: 980px){
@@ -1134,94 +1135,15 @@
     .brand{ min-width: auto; }
     .lb-nav{ width: 54px; font-size: 46px; }
   }
+  @media (max-width: 560px){
+    .footer-bottom--split{
+      flex-direction:column;
+      align-items:flex-start;
+    }
   
-  /* ===========================
-   DESIGN BY – FINAL OVERRIDE (scris mare + lipit)
-   PUNE-L ULTIMUL IN CSS
-   =========================== */
-
-/* 1) bate peste .footer a {padding: 8px 0; display:block;} */
-.footer a.design-by{
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: flex-end !important;
-
-  padding: 0 !important;
-  margin: 0 !important;
-
-  gap: 2px !important;                 /* lipit */
-  line-height: 1 !important;
-  white-space: nowrap !important;
-  text-decoration: none !important;
-}
-
-/* 2) textul */
-.footer a.design-by .db-text{
-  font-size: 12px !important;
-  font-weight: 750 !important;
-  color: rgba(0,0,0,.58) !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* 3) cutia logo-ului (mai mare ca să se citească scrisul) */
-.footer a.design-by .db-logo{
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-
-  width: 220px !important;             /* SCRIS MAI MARE */
-  height: 70px !important;             /* SCRIS MAI MARE */
-
-  margin: 0 !important;
-  padding: 0 !important;
-
-  overflow: visible !important;        /* nu taie */
-  background: transparent !important;
-  border: none !important;
-  flex: 0 0 auto !important;
-}
-
-/* 4) imaginea – forțăm să fie lipită + mai mare
-      IMPORTANT: asta bate peste orice transform: none !important */
-.footer a.design-by .db-logo img{
-  width: 100% !important;
-  height: 100% !important;
-  max-width: none !important;          /* extra safety */
-  max-height: none !important;
-
-  object-fit: contain !important;
-  display: block !important;
-
-  transform: translateX(-22px) scale(1.12) !important; /* LIPIT + MAI MARE */
-  transform-origin: center !important;
-}
-
-/* MOBILE */
-@media (max-width: 560px){
-  .footer a.design-by{
-    gap: 1px !important;
+    .footer a.design-by img.ms-footer-logo{
+      height: 60px;
+    }
   }
-
-  .footer a.design-by .db-logo{
-    width: 170px !important;
-    height: 58px !important;
-  }
-
-  .footer a.design-by .db-logo img{
-    transform: translateX(-16px) scale(1.14) !important;
-  }
-}
-@media (max-width: 560px){
-  .footer a.design-by .db-logo{
-    overflow: hidden !important;       /* ascunde ce “tăiem” */
-  }
-
-  .footer a.design-by .db-logo img{
-    clip-path: inset(9px 0 9px 0) !important; /* taie 8px sus+jos (schimbă 6-12px) */
-    background: transparent !important;
-    box-shadow: none !important;
-    outline: none !important;
-    border: 0 !important;
-  }
-}
+  
+  
