@@ -362,3 +362,90 @@
   window.addEventListener("resize", update);
   update();
 })();
+// =====================
+// COOKIE CONSENT (simple)
+// =====================
+(function () {
+  const KEY = "cookieConsent_v1";
+
+  const banner = document.getElementById("cookie-banner");
+  if (!banner) return;
+
+  const acceptBtn = document.getElementById("cookie-accept");
+  const rejectBtn = document.getElementById("cookie-reject");
+  const settingsBtn = document.getElementById("cookie-settings");
+  const panel = document.getElementById("cookie-settings-panel");
+  const saveBtn = document.getElementById("cookie-save");
+  const analyticsToggle = document.getElementById("cookie-analytics-toggle");
+  const openPolicy = document.getElementById("cookie-open-policy");
+
+  function getConsent() {
+    try { return JSON.parse(localStorage.getItem(KEY)); } catch { return null; }
+  }
+
+  function setConsent(consentObj) {
+    localStorage.setItem(KEY, JSON.stringify(consentObj));
+  }
+
+  // Aici încarci scripturi opționale DOAR după accept (dacă vei adăuga analytics în viitor)
+  function applyConsent(consent) {
+    if (consent && consent.analytics === true) {
+      // Exemplu: aici ai încărca Google Analytics / Pixel etc.
+      // IMPORTANT: NU pune scripturi de tracking direct în HTML dacă vrei conformitate opt-in.
+    }
+  }
+
+  function showBanner() { banner.hidden = false; }
+  function hideBanner() { banner.hidden = true; panel.hidden = true; }
+
+  acceptBtn?.addEventListener("click", function () {
+    const consent = { necessary: true, analytics: true, ts: Date.now() };
+    setConsent(consent);
+    applyConsent(consent);
+    hideBanner();
+  });
+
+  rejectBtn?.addEventListener("click", function () {
+    const consent = { necessary: true, analytics: false, ts: Date.now() };
+    setConsent(consent);
+    applyConsent(consent);
+    hideBanner();
+  });
+
+  settingsBtn?.addEventListener("click", function () {
+    panel.hidden = !panel.hidden;
+    const existing = getConsent();
+    analyticsToggle.checked = existing ? !!existing.analytics : false;
+  });
+
+  saveBtn?.addEventListener("click", function () {
+    const consent = { necessary: true, analytics: !!analyticsToggle.checked, ts: Date.now() };
+    setConsent(consent);
+    applyConsent(consent);
+    hideBanner();
+  });
+
+  // Leagă linkul "Vezi Politica de cookies" de modalul tău existent
+  openPolicy?.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    // 1) deschide modalul legal (dacă ai deja funcție în app.js, folosește-o)
+    // fallback: doar declanșează click pe linkul din footer "Cookies"
+    const cookiesLink = document.querySelector('[data-legal="cookies"]');
+    if (cookiesLink) cookiesLink.click();
+  });
+
+  // expune o funcție globală pentru "Schimbă setările cookie" (opțional, recomandat)
+  window.resetCookieConsent = function () {
+    localStorage.removeItem(KEY);
+    showBanner();
+  };
+
+  // init
+  const existing = getConsent();
+  if (!existing) {
+    showBanner();
+  } else {
+    applyConsent(existing);
+  }
+})();

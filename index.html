@@ -1071,6 +1071,39 @@
     </div>
   </div>
 </div>
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
+  <div class="cookie-banner__content">
+    <p class="cookie-banner__title">Folosim cookie-uri</p>
+    <p class="cookie-banner__text">
+      Folosim cookie-uri strict necesare pentru funcționarea site-ului. Opțional, putem folosi cookie-uri de analiză
+      pentru a îmbunătăți experiența (doar cu acordul tău).
+      <a href="#" class="cookie-banner__link" id="cookie-open-policy">Vezi Politica de cookies</a>.
+    </p>
+
+    <div class="cookie-banner__actions">
+      <button id="cookie-accept" class="cookie-btn cookie-btn--primary" type="button">Accept</button>
+      <button id="cookie-reject" class="cookie-btn cookie-btn--secondary" type="button">Respinge</button>
+      <button id="cookie-settings" class="cookie-btn cookie-btn--link" type="button">Setări</button>
+    </div>
+
+    <div id="cookie-settings-panel" class="cookie-settings" hidden>
+      <label class="cookie-toggle">
+        <input type="checkbox" checked disabled />
+        <span>Strict necesare (mereu active)</span>
+      </label>
+
+      <label class="cookie-toggle">
+        <input id="cookie-analytics-toggle" type="checkbox" />
+        <span>Analiză (opțional)</span>
+      </label>
+
+      <div class="cookie-banner__actions cookie-banner__actions--panel">
+        <button id="cookie-save" class="cookie-btn cookie-btn--primary" type="button">Salvează</button>
+      </div>
+    </div>
+  </div>
+</div>
   <script src="app.js"></script>
 </body>
 </html>
